@@ -1,0 +1,2 @@
+- setup docker
+- command running : docker-compose -up -d

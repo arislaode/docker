@@ -1,0 +1,34 @@
+version: '3.8'
+services:
+  db:
+    container_name: db-ansor
+    platform: linux/x86_64
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: rahasia123
+      MYSQL_DATABASE: goes_ansor
+      MYSQL_USER: bosku
+      MYSQL_PASSWORD: P@rahasia123
+    command: --max_allowed_packet=120M
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - ansor-network
+
+  redis:
+    container_name: redis-ansor
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    networks:
+      - ansor-network
+
+volumes:
+  mysql_data:
+
+networks:
+  ansor-network:
+    driver: bridge
+    name: ansor-network
