@@ -5,10 +5,10 @@ services:
     platform: linux/x86_64
     image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: rahasia123
-      MYSQL_DATABASE: goes_ansor
-      MYSQL_USER: bosku
-      MYSQL_PASSWORD: P@rahasia123
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     command: --max_allowed_packet=120M
     restart: unless-stopped
     ports:
