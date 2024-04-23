@@ -25,6 +25,22 @@ services:
     networks:
       - ansor-network
 
+  nginx:
+    container_name: nginx-ansor
+    image: nginx:latest
+    ports:
+      - "8080:80"
+      - "8443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/html:/usr/share/nginx/html
+    depends_on:
+      - db
+      - redis
+    networks:
+      - ansor-network
+
 volumes:
   mysql_data:
 
