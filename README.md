@@ -1,12 +1,7 @@
 ## Instalation
 
-- Berikan izin eksekusi ke file script dengan menjalankan:
 
+- Running docker build:
 ```bash
-    chmod +x setup-and-run.sh
-```
-
-- Eksekusi script dari terminal:
-```bash
-    ./setup-and-run.sh
+    docker compose up -d --build
 ```
